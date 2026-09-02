@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arabic-postocr"
+version = "0.1.0"
+description = "Post-OCR correction for Arabic text: detect errors, repair only those."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+keywords = ["arabic", "ocr", "post-ocr", "text-correction", "nlp"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Natural Language :: Arabic",
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+  "transformers>=4.40",
+  "torch>=2.0",
+  "sentencepiece>=0.1.99",
+]
+
+[project.optional-dependencies]
+eval = ["evaluate>=0.4", "jiwer>=3.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+arabic-postocr = "arabic_postocr.cli:main"
+
+[project.urls]
+Source = "https://github.com/g3ida/Arabic-postocr"
+
+[tool.setuptools.packages.find]
+where = ["src"]

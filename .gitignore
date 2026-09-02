@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv*/
+.pytest_cache/
+*.jsonl
+!examples/*.jsonl
+!benchmarks/eval.jsonl
+!benchmarks/data/*.jsonl
+runs/
+models/
+model_cards/
